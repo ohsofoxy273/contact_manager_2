@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Contact Manager</title>
+  <link rel="stylesheet" href="main.css">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="handlebars.js"></script>
+  <script src="main.js" type="text/javascript" charset="utf-8" async defer></script>
+</head>
+<body>
+  <header>
+    <h1>Contact Manager</h1>
+  </header>
+  <main>
+    <div id="add_contact_and_search">
+      <button class="add">Add Contact</button>
+      <input id='search' type="text" placeholder="Search">
+    </div>
+    <div id='contacts'>
+      
+    </div>
+    <div id='create_contact'>
+      
+    </div>
+    <div id='edit_contact'>
+     
+    </div>
+  </main>
+  <footer>
+    <p>Developed by Me</p>
+  </footer>
+  <script id="contacts_template" type="text/x-handlebars">
+    <div id="no_contacts">
+      <p>There are no contacts</p>
+      <button class="add">Add contact</button>
+    </div>
+    <div id="list_contacts">
+      <section class="contact" data-index='0'>
+        <dl>
+          <dt class="name"></dt>
+          <dd class="name">Joe Jim</dd>
+          <dt class="phone">Phone Number:</dt>
+          <dd class="phone">11111111</dd>
+          <dt class="email">Email:</dd>
+          <dd class="email">blah@gmik.com</dt>
+        </dl>
+        <button>Edit</button>
+        <button>Delete</button>
+      </section>
+    </div>
+  </script>
+  <script id="create_contact_template" type="text/x-handlebars">
+    <h2>Create Contact</h2>
+    <form action="#">
+      <label>
+        Full Name:
+        <input type="text">
+      </label>
+      <label>
+        Email address:
+        <input type="text">
+      </label>
+      <label>
+        Telephone number:
+        <input type="text">
+      </label>
+      <button>Submit</button>
+      <button>Cancel</button>
+    </form>
+  </script>
+  <script id="edit_contact_template" type="text/x-handlebars">
+    <h2>Edit Contact</h2>
+    <form action="#">
+      <label>
+        Full Name:
+        <input type="text">
+      </label>
+      <label>
+        Email address:
+        <input type="text">
+      </label>
+      <label>
+        Telephone number:
+        <input type="text">
+      </label>
+      <button>Submit</button>
+      <button>Cancel</button>
+    </form>
+  </script>
+</body>
+</html>

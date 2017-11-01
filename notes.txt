@@ -1,0 +1,62 @@
+contact manager homepage
+  header, main, footer
+
+main: area to add contact and search
+  area to indicate no contacts or list the contacts
+
+add contact:
+  name, email, phone
+  validate
+  save in local storage
+
+list the contacts:
+  name, phone and email from localStorage
+  Edit and Delete buttons
+
+search form:
+  each letter entered narrows down the search
+
+templates:
+
+  no contacts
+  contacts
+  new contact
+  edit contact
+
+local storage object:
+  needs: index, name, email, phone
+
+
+compile templates
+
+on init:
+  hide forms
+
+  if no contacts in local storage:
+    no contacts
+  else 
+    contacts
+
+add contact buttons show create contact form
+
+create contact form
+  custom errors for the form validation
+  submit to local storage
+    contacts = [];
+    {id: 0, name: '', phone: '', email: ''}, ...
+
+  cancel to clear form and hide it
+
+edit contact form
+  custom errors
+  pre-populate form
+
+
+delete
+  delete from local storage
+
+search
+  each keystroke is a search and narrows the field 
+
+
+  cancel to erase all entered data and hide the form
