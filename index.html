@@ -21,15 +21,9 @@
       <button class="add">Add Contact</button>
       <input id='search' type="text" placeholder="Search">
     </div>
-    <div id='contacts'>
-      
-    </div>
-    <div id='create_contact'>
-      
-    </div>
-    <div id='edit_contact'>
-     
-    </div>
+    <div id='contacts'></div>
+    <div id='create_contact'></div>
+    <div id='edit_contact'></div>
   </main>
   <footer>
     <p>Developed by Me</p>
@@ -40,18 +34,24 @@
       <button class="add">Add contact</button>
     </div>
     <div id="list_contacts">
-      <section class="contact" data-index='0'>
+      {{#each contacts}}
+      <section class="contact" data-id={{id}}>
         <dl>
           <dt class="name"></dt>
-          <dd class="name">Joe Jim</dd>
+          <dd class="name">{{name}}</dd>
           <dt class="phone">Phone Number:</dt>
-          <dd class="phone">11111111</dd>
+          <dd class="phone">{{phone}}</dd>
           <dt class="email">Email:</dd>
-          <dd class="email">blah@gmik.com</dt>
+          <dd class="email">{{email}}</dt>
+          {{#each tags}}
+            <dd class='tag'></dd>
+            <dt class='tag'>{{.}}</dt>
+          {{/each}}
         </dl>
-        <button>Edit</button>
-        <button>Delete</button>
+        <button class='edit'>Edit</button>
+        <button class='delete'>Delete</button>
       </section>
+      {{/each}}
     </div>
   </script>
   <script id="create_contact_template" type="text/x-handlebars">
@@ -59,37 +59,46 @@
     <form action="#">
       <label>
         Full Name:
-        <input type="text">
+        <input type="text" name="name" required min-length="3">
       </label>
       <label>
         Email address:
-        <input type="text">
+        <input type="email" name="email" required >
       </label>
       <label>
         Telephone number:
-        <input type="text">
+        <input type="tel" name="phone" required >
       </label>
-      <button>Submit</button>
-      <button>Cancel</button>
+      <label>
+        Optional Tags (comma separated):
+        <input type="text" name="tags">
+      </label>
+      <button class='submit'>Submit</button>
+      <button class='cancel'>Cancel</button>
     </form>
   </script>
   <script id="edit_contact_template" type="text/x-handlebars">
     <h2>Edit Contact</h2>
     <form action="#">
+      <input type='hidden' value={{id}}>
       <label>
         Full Name:
-        <input type="text">
+        <input type="text" name="name" required min-length="3" value={{name}}>
       </label>
       <label>
         Email address:
-        <input type="text">
+        <input type="email" name="email" required value={{email}} >
       </label>
       <label>
         Telephone number:
-        <input type="text">
+        <input type="tel" name="phone" required value={{phone}}>
       </label>
-      <button>Submit</button>
-      <button>Cancel</button>
+      <label>
+        Optional Tags (comma separated):
+        <input type="text" name="tags" value={{tags}}>
+      </label>
+      <button class='submit'>Submit</button>
+      <button class='cancel'>Cancel</button>
     </form>
   </script>
 </body>

@@ -24,7 +24,7 @@ templates:
   edit contact
 
 local storage object:
-  needs: index, name, email, phone
+  needs: index, name, email, phone, tags
 
 
 compile templates
@@ -43,7 +43,7 @@ create contact form
   custom errors for the form validation
   submit to local storage
     contacts = [];
-    {id: 0, name: '', phone: '', email: ''}, ...
+    {id: 0, name: '', phone: '', email: '', tags: [...]}, ...
 
   cancel to clear form and hide it
 
@@ -60,3 +60,12 @@ search
 
 
   cancel to erase all entered data and hide the form
+
+
+Tags
+  view tags if they are there
+  tags are an array in the object { ... tags: [...]}
+
+  forms with tags, add or change by comma separated values
+
+  clicking on a tag selects the contacts with those tags
