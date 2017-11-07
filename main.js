@@ -59,14 +59,6 @@ let Contacts = {
     }
     localStorage.setItem('contacts', JSON.stringify(contactsArray));
   },
-
-  anyActiveTags: function() {
-
-  }
-}
-
-function Tag(value) {
-  this.value = value;
 }
 
 let Tags = {
