@@ -93,3 +93,7 @@ dt.tag {
   padding: 0.2em 0 0.2em 0;
   border-radius: 0.2em;  
 }
+
+dt.active {
+  border: solid #f00 2px;
+}

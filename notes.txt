@@ -69,3 +69,37 @@ Tags
   forms with tags, add or change by comma separated values
 
   clicking on a tag selects the contacts with those tags
+
+  active tags:
+  
+    click on a contact's tag1
+    select all the users with that tag1
+
+    click on another tag2
+    select all the users with the tag2, and the previous tag1
+
+    click on another tag3
+    select all the users with the tag3, and the previous tag1 and tag2
+
+    click on tag2
+    'unselect' tag2, show tag1 and tag3 contacts
+
+    click on tag1
+    'unselect' tag1, show tag3 contacts
+
+    click on tag3
+    'unselect' tag3, show all contacts
+
+
+    click on an inactive tag:
+      add active class to that tag and all other tags with the same text;
+      add the tag text to the Tags.active array;
+      display all the contacts with tags in the Tags.active array.
+
+
+    click on an active tag:
+      remove active class from that tag and all other tags with the same text;
+      remove the tag text from the tags.active array;
+      display all the contacts with tags in the Tags.active array
+
+
